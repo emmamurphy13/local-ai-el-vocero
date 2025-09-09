@@ -109,7 +109,13 @@ def get_weather_bulletin(bulletin, test_mode) -> list:
             eventdict['description'] = translate(description)
 
             description_dict = process_description(description, translate)
-            eventdict.update(description_dict)
+
+            if len(description_dict) > 0:
+                eventdict.update(description_dict)
+            else:
+                logger.warning(f"process_description() came up empty for {eventid}")
+                eventdict['use_description'] = True
+                    
 
             data.append(eventdict)
             logger.info(f"Added [{event}] [{eventid}] to data")

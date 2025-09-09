@@ -1,0 +1,91 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "@vocab": "https://api.weather.gov/ontology#"
+    }
+  ],
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c231dbd1a85eb857c4c15fce0172360cc9d2bd00.001.1",
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-66.35, 18.2399999],
+            [-66.36999999999999, 18.18],
+            [-66.61999999999999, 18.19],
+            [-66.55, 18.34],
+            [-66.35, 18.2399999]
+          ]
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c231dbd1a85eb857c4c15fce0172360cc9d2bd00.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.c231dbd1a85eb857c4c15fce0172360cc9d2bd00.001.1",
+        "areaDesc": "Central Interior",
+        "geocode": {
+          "SAME": [
+            "072009",
+            "072019",
+            "072039",
+            "072043",
+            "072047",
+            "072073",
+            "072101",
+            "072105",
+            "072107",
+            "072149"
+          ],
+          "UGC": ["PRZ006"]
+        },
+        "affectedZones": ["https://api.weather.gov/zones/forecast/PRZ006"],
+        "references": [],
+        "sent": "2025-09-09T14:24:00-04:00",
+        "effective": "2025-09-09T14:24:00-04:00",
+        "onset": "2025-09-09T14:24:00-04:00",
+        "expires": "2025-09-09T15:00:00-04:00",
+        "ends": null,
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Moderate",
+        "certainty": "Observed",
+        "urgency": "Expected",
+        "event": "Special Weather Statement",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS San Juan PR",
+        "headline": "Special Weather Statement issued September 9 at 2:24PM AST by NWS San Juan PR",
+        "description": "At 223 PM AST, Doppler radar indicated a strong thunderstorm over\nOrocovis, moving west at 10 mph.\n\nHAZARD...Wind gusts up to 40 mph and pea size hail.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock down tree limbs and blow around\nunsecured objects. Minor hail damage to vegetation is\npossible.\n\nLocations impacted include...\nJayuya and Orocovis.",
+        "instruction": "If outdoors, consider seeking shelter inside a building.\n\nTorrential rainfall is also occurring with this storm and may lead to\nlocalized flooding. Do not drive your vehicle through flooded\nroadways.",
+        "response": "Execute",
+        "parameters": {
+          "AWIPSidentifier": ["SPSSJU"],
+          "WMOidentifier": ["WWCA82 TJSJ 091824"],
+          "NWSheadline": [
+            "A STRONG THUNDERSTORM WILL IMPACT MOROVIS...JAYUYA...CIALES AND OROCOVIS MUNICIPALITIES THROUGH 300 PM AST"
+          ],
+          "eventMotionDescription": [
+            "2025-09-09T18:23:00-00:00...storm...097DEG...9KT...18.22,-66.43"
+          ],
+          "maxWindGust": ["40 MPH"],
+          "maxHailSize": ["0.25"],
+          "BLOCKCHANNEL": ["EAS", "NWEM", "CMAS"],
+          "EAS-ORG": ["WXR"]
+        },
+        "scope": "Public",
+        "code": "IPAWSv1.0",
+        "language": "en-US",
+        "web": "http://www.weather.gov",
+        "eventCode": { "SAME": ["SPS"], "NationalWeatherService": ["SPS"] }
+      }
+    }
+  ],
+  "title": "Current watches, warnings, and advisories for Puerto Rico",
+  "updated": "2025-09-09T18:35:16+00:00"
+}

@@ -1,17 +1,22 @@
-    <p>El Servicio Nacional de Meteorología (SNM) ha emitido un {{data.event}} para Puerto Rico.
-         El aviso publicado a las {{ data.effective }} se extiende hasta las {{ data.expires }} y {% if data.onearea%}afecta al municipio {{ data.areas_affected}}.{% else %}afecta a los municipios de {{ data.areas_affected }}.{% endif %}
-         La descripción del evento menciona lo siguiente: {% if data.what %} {{data.what}} {% elif data.hazard %} {{data.hazard}} {% endif %}
-    </p>
-    <p>
-         {% if data.impacts %}
-         Según las indicaciones del NWS, esto puede resultar en los siguientes impactos:
-         {{data.impacts}}
-        {% endif %}
-    </p>
-    <p>
-        {% if data.event == 'flash flood warning' %}
-        Un {{data.event}} significa que el riesgo es inminente o está ocurriendo en la zona. 
-        {% endif %}
-     </p>
+     <p>El Servicio Nacional de Meteorología (SNM) ha emitido un {{data.event}} para Puerto Rico. El aviso publicado a las {{ data.effective }} se extiende hasta las {{ data.expires }} y {% if data.onearea%}afecta al municipio {{ data.areas_affected}}.{% else %}afecta a los municipios de {{ data.areas_affected }}.{% endif %}
 
+          {% if data.what or data.hazard %}
+          La descripción del evento menciona lo siguiente: {% if data.what %} {{data.what}} {% elif data.hazard %} {{data.hazard}} {% endif %}{% endif %}
+     </p>
+     {% if data.impacts %}
+     <p>
+          Según las indicaciones del NWS, esto puede resultar en los siguientes impactos:
+          {{data.impacts}}
+     </p>
+     {% endif %}
+     {% if data.event == 'flash flood warning' %}
+     <p>
+          Un {{data.event}} significa que el riesgo es inminente o está ocurriendo en la zona. 
+     </p>
+     {% endif %}
+     {% if data.use_description %}
+     <p>
+          {{data.description}}
+     </p>
+     {% endif %}
 {% include "_credit.html" %}
