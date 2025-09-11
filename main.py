@@ -70,6 +70,7 @@ def main_nws(testfile=None, actually_post_articles=False):
         filelocation=os.path.join(nwsjson_directory,f"{textid}.json")
         with open(filelocation,"w") as file:
             json.dump(nws_json, file)
+            logger.debug(f"saved {filelocation}")
 
     # TODO: pass JSON instead of file
     generated = generate_nws_stories(filelocation, test_mode=test_mode)
@@ -130,7 +131,9 @@ def main_nhc(testfile=None, actually_send_email=False, actually_post_articles=Fa
                     filelocation = os.path.join(tcpat_directory, f"{wallet}_{textid}.xml")
                     
                     with open(filelocation, "w") as file:
-                        file.write(response.text) 
+                        file.write(response.text)
+                        logger.debug(f"saved {filelocation}")
+
                     parsed = writeNHC(StringIO(response.text)) 
                     if parsed== {}:
                         pass # TODO: this was "return" which would skip any URLs after this case. Make sure there wasn't a reason for it.
